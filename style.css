@@ -559,4 +559,66 @@ footer p:last-child {
     }
 
 }
-```
+```/* =========================
+   PREDICTION RESULT EMPHASIS
+========================= */
+
+.prediction-box {
+    background: linear-gradient(145deg, #151d26, #101820);
+    border: 1px solid #3a4754;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.prediction-box h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aeb8c2;
+}
+
+.prediction-box h2 {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.probabilities > div {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.probabilities > div:hover {
+    transform: translateY(-3px);
+    border-color: #ffffff;
+}
+
+.probabilities span {
+    font-size: 28px;
+}
+
+.analysis-summary {
+    background: #111820;
+}
+
+.analysis-summary p {
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE PREDICTION RESULT
+========================= */
+
+@media (max-width: 768px) {
+
+    .prediction-box {
+        padding: 22px 16px;
+    }
+
+    .prediction-box h2 {
+        font-size: 27px;
+    }
+
+    .probabilities > div {
+        padding: 18px;
+    }
+
+}
