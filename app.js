@@ -423,7 +423,6 @@ async function seasonChanged() {
 
     await loadTeams();
 
-    await loadMatches();
 }
 
 
@@ -564,121 +563,6 @@ async function loadTeams() {
     console.log(
         `Teams loaded: ${teams.length}`
     );
-}
-
-
-// ============================================================
-// LOAD FIXTURES
-// ============================================================
-
-async function loadMatches() {
-
-    const competition =
-        document.getElementById("competition");
-
-    const season =
-        document.getElementById("season");
-
-    const container =
-        document.getElementById("matches-container");
-
-
-    if (
-        !competition ||
-        !season ||
-        !container
-    ) {
-        return;
-    }
-
-
-    if (
-        !competition.value ||
-        !season.value
-    ) {
-        return;
-    }
-
-
-    container.innerHTML =
-        `<div class="match-card">
-            <h3>⏳ Loading fixtures...</h3>
-        </div>`;
-
-
-    const data =
-        await apiRequest(
-            `/fixtures?league=${competition.value}&season=${season.value}`
-        );
-
-
-    if (
-        !data ||
-        !Array.isArray(data.response)
-    ) {
-
-        container.innerHTML =
-            `<div class="match-card">
-                <h3>Fixtures unavailable</h3>
-            </div>`;
-
-        return;
-    }
-
-
-    if (data.response.length === 0) {
-
-        container.innerHTML =
-            `<div class="match-card">
-                <h3>No fixtures available</h3>
-            </div>`;
-
-        return;
-    }
-
-
-    container.innerHTML = "";
-
-
-    data.response
-        .slice(0, 10)
-        .forEach(match => {
-
-            const card =
-                document.createElement("div");
-
-            card.className =
-                "match-card";
-
-
-            const date =
-                new Date(
-                    match.fixture.date
-                );
-
-
-            card.innerHTML = `
-
-                <h3>
-                    ${match.teams.home.name}
-                    vs
-                    ${match.teams.away.name}
-                </h3>
-
-                <p>
-                    ${date.toLocaleString()}
-                </p>
-
-                <strong>
-                    ${match.fixture.status.short}
-                </strong>
-
-            `;
-
-
-            container.appendChild(card);
-
-        });
 }
 
 
@@ -2981,16 +2865,16 @@ function getPredictionLabel(
 
 
 return {
-    prediction:
-        winner.name === "Draw"
-            ? "Draw"
-            : `${winner.name} to Win`,
+        prediction:
+            winner.name === "Draw"
+                ? "Draw"
+                : `${winner.name} to Win`,
 
-    confidence,
+        confidence,
 
-    probability:
-        winner.value
-};
+        probability:
+            winner.value
+    };
 }
 
 // ============================================================
