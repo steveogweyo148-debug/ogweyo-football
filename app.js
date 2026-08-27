@@ -2432,6 +2432,7 @@ async function analyzeMatch() {
 }
 
 
+```javascript
 // ============================================================
 // APPLICATION START
 // ============================================================
@@ -2509,12 +2510,17 @@ document.addEventListener(
 
         await loadCompetitions();
 
+        await loadTodaysMatches();
+
 
         console.log(
             "🌍 WORLDWIDE FOOTBALL SYSTEM READY"
         );
 
     }
+);
+```
+
 );// ============================================================
 // OGWEYOJR SERIOUS PREDICTION ENGINE
 // ============================================================
