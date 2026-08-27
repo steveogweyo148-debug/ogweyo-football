@@ -2980,58 +2980,17 @@ function getPredictionLabel(
     }
 
 
+return {
+    prediction:
+        winner.name === "Draw"
+            ? "Draw"
+            : `${winner.name} to Win`,
 
-Replace **the entire section above** with:
+    confidence,
 
-:::writing{variant="document" id="48217" title="Clean Prediction Label Function"}
-```javascript
-function getPredictionLabel(
-    probabilities,
-    homeName,
-    awayName
-) {
-    const values = [
-        {
-            name: homeName,
-            value: probabilities.homeProbability
-        },
-        {
-            name: "Draw",
-            value: probabilities.drawProbability
-        },
-        {
-            name: awayName,
-            value: probabilities.awayProbability
-        }
-    ];
-
-    values.sort(
-        (a, b) => b.value - a.value
-    );
-
-    const winner = values[0];
-
-    let confidence = "Low";
-
-    if (winner.value >= 65) {
-        confidence = "Very High";
-    } else if (winner.value >= 55) {
-        confidence = "High";
-    } else if (winner.value >= 45) {
-        confidence = "Medium";
-    }
-
-    return {
-        prediction:
-            winner.name === "Draw"
-                ? "Draw"
-                : `${winner.name} to Win`,
-
-        confidence,
-
-        probability:
-            winner.value
-    };
+    probability:
+        winner.value
+};
 }
 
 // ============================================================
