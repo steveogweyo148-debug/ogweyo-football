@@ -5517,3 +5517,133 @@ function displayFinalPrediction(
         "🎯 FINAL OGWEYOJR PREDICTION DISPLAYED"
     );
 }
+// ============================================================
+// TODAY'S MATCHES
+// ============================================================
+
+async function loadTodayMatches() {
+
+    const container =
+        document.getElementById("today-matches-container");
+
+    const status =
+        document.getElementById("today-matches-status");
+
+    if (!container || !status) {
+        return;
+    }
+
+    status.textContent =
+        "⏳ Loading today's matches...";
+
+    container.innerHTML = "";
+
+    try {
+
+        const today =
+            new Date();
+
+        const year =
+            today.getFullYear();
+
+        const month =
+            String(today.getMonth() + 1).padStart(2, "0");
+
+        const day =
+            String(today.getDate()).padStart(2, "0");
+
+        const date =
+            `${year}-${month}-${day}`;
+
+
+        const data =
+            await apiRequest(
+                `/fixtures?date=${date}`
+            );
+
+
+        if (
+            !data ||
+            !Array.isArray(data.response)
+        ) {
+
+            status.textContent =
+                "⚠️ Matches unavailable.";
+
+            return;
+        }
+
+
+        if (data.response.length === 0) {
+
+            status.textContent =
+                "No matches scheduled today.";
+
+            return;
+        }
+
+
+        status.textContent =
+            `${data.response.length} matches today`;
+
+
+        data.response.forEach(match => {
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "match-card";
+
+
+            const matchDate =
+                new Date(
+                    match.fixture.date
+                );
+
+
+            card.innerHTML = `
+
+                <h3>
+                    ${match.teams.home.name}
+                    vs
+                    ${match.teams.away.name}
+                </h3>
+
+                <p>
+                    🕐 ${matchDate.toLocaleTimeString(
+                        [],
+                        {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        }
+                    )}
+                </p>
+
+                <p>
+                    🏆 ${match.league.name}
+                </p>
+
+                <strong>
+                    ${match.fixture.status.short}
+                </strong>
+
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Today's matches error:",
+            error
+        );
+
+        status.textContent =
+            "⚠️ Unable to load today's matches.";
+
+    }
+}
