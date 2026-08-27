@@ -2430,9 +2430,6 @@ async function analyzeMatch() {
     );
 
 }
-
-
-```javascript
 // ============================================================
 // APPLICATION START
 // ============================================================
@@ -2443,18 +2440,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("OGWEYOJR TIPS STARTING");
     console.log("==============================");
 
-    const country =
-        document.getElementById("country");
-
-    const competition =
-        document.getElementById("competition");
-
-    const season =
-        document.getElementById("season");
-
-    const analyzeButton =
-        document.getElementById("analyze-btn");
-
+    const country = document.getElementById("country");
+    const competition = document.getElementById("competition");
+    const season = document.getElementById("season");
+    const analyzeButton = document.getElementById("analyze-btn");
 
     if (
         !country ||
@@ -2462,50 +2451,41 @@ document.addEventListener("DOMContentLoaded", async function () {
         !season ||
         !analyzeButton
     ) {
-
         console.error(
             "Required HTML elements are missing."
         );
-
         return;
     }
-
 
     country.addEventListener(
         "change",
         showCompetitions
     );
 
-
     competition.addEventListener(
         "change",
         competitionChanged
     );
-
 
     season.addEventListener(
         "change",
         seasonChanged
     );
 
-
     analyzeButton.addEventListener(
         "click",
         analyzeMatch
     );
 
-
     await loadCountries();
 
     await loadCompetitions();
-
 
     console.log(
         "🌍 WORLDWIDE FOOTBALL SYSTEM READY"
     );
 
 });
-```
 
 // ============================================================
 // CALCULATE TEAM FORM
