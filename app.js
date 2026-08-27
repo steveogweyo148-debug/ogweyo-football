@@ -2482,8 +2482,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     await loadCountries();
 
- ```javascript
-```javascript
+
 // ============================================================
 // APPLICATION START
 // ============================================================
