@@ -2477,18 +2477,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     analyzeButton.addEventListener(
         "click",
         analyzeMatch
+```javascript
     );
 
     await loadCountries();
-// ============================================================
-// APPLICATION START
-// ============================================================
 
-document.addEventListener("DOMContentLoaded", async function () {
+    await loadCompetitions();
 
-    console.log("==============================");
-    console.log("OGWEYOJR TIPS STARTING");
-    console.log("==============================");
+    console.log(
+        "🌍 WORLDWIDE FOOTBALL SYSTEM READY"
+    );
+
+});
+```
 
     const country =
         document.getElementById("country");
