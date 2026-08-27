@@ -5646,4 +5646,8 @@ async function loadTodayMatches() {
             "⚠️ Unable to load today's matches.";
 
     }
-}
+}// Load today's matches when the application starts
+document.addEventListener(
+    "DOMContentLoaded",
+    loadTodayMatches
+);
