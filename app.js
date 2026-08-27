@@ -3039,20 +3039,19 @@ function getPredictionLabel(
     }
 
 
-    return {
+  ```javascript
+return {
+    prediction:
+        winner.name === "Draw"
+            ? "Draw"
+            : `${winner.name} to Win`,
 
-        prediction:
-            winner.name === "Draw"
-                ? "Draw"
-                : `${winner.name} to Win`,
+    confidence,
 
-        confidence,
-
-        probability:
-            winner.value
-    };
-}
-
+    probability:
+        winner.value
+};
+```
 
 // ============================================================
 // SERIOUS ANALYSIS
