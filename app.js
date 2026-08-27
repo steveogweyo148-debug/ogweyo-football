@@ -3240,17 +3240,11 @@ async function runSeriousAnalysis() {
         );
 
 
-    // --------------------------------------------------------
-    // DISPLAY
-    // --------------------------------------------------------
-
-    result.innerHTML = `
+     result.innerHTML = `
 
         <div class="prediction-box">
 
-            <h2>
-                🧠 OGWEYOJR PREDICTION
-            </h2>
+            <h2>🧠 OGWEYOJR PREDICTION</h2>
 
             <h3>
                 ${homeName}
@@ -3258,170 +3252,112 @@ async function runSeriousAnalysis() {
                 ${awayName}
             </h3>
 
-
             <hr>
-
 
             <div class="form-card">
 
-                <h3>
-                    🔥 ${homeName}
-                </h3>
+                <h3>🔥 ${homeName}</h3>
 
                 <p>
                     Form:
-                    <strong>
-                        ${homeForm.form}
-                    </strong>
+                    <strong>${homeForm.form}</strong>
                 </p>
 
                 <p>
                     Wins:
-                    <strong>
-                        ${homeForm.wins}
-                    </strong>
-
+                    <strong>${homeForm.wins}</strong>
                     |
-
                     Draws:
-                    <strong>
-                        ${homeForm.draws}
-                    </strong>
-
+                    <strong>${homeForm.draws}</strong>
                     |
-
                     Losses:
-                    <strong>
-                        ${homeForm.losses}
-                    </strong>
+                    <strong>${homeForm.losses}</strong>
                 </p>
 
                 <p>
                     ⚽ Average Goals:
-                    <strong>
-                        ${homeForm.averageGoals.toFixed(2)}
-                    </strong>
+                    <strong>${homeForm.averageGoals.toFixed(2)}</strong>
                 </p>
 
                 <p>
                     🛡️ Average Conceded:
-                    <strong>
-                        ${homeForm.averageConceded.toFixed(2)}
-                    </strong>
+                    <strong>${homeForm.averageConceded.toFixed(2)}</strong>
                 </p>
 
                 <p>
                     🧤 Clean Sheet Rate:
-                    <strong>
-                        ${homeForm.cleanSheetRate.toFixed(1)}%
-                    </strong>
+                    <strong>${homeForm.cleanSheetRate.toFixed(1)}%</strong>
                 </p>
 
             </div>
 
-
             <hr>
-
 
             <div class="form-card">
 
-                <h3>
-                    🔥 ${awayName}
-                </h3>
+                <h3>🔥 ${awayName}</h3>
 
                 <p>
                     Form:
-                    <strong>
-                        ${awayForm.form}
-                    </strong>
+                    <strong>${awayForm.form}</strong>
                 </p>
 
                 <p>
                     Wins:
-                    <strong>
-                        ${awayForm.wins}
-                    </strong>
-
+                    <strong>${awayForm.wins}</strong>
                     |
-
                     Draws:
-                    <strong>
-                        ${awayForm.draws}
-                    </strong>
-
+                    <strong>${awayForm.draws}</strong>
                     |
-
                     Losses:
-                    <strong>
-                        ${awayForm.losses}
-                    </strong>
+                    <strong>${awayForm.losses}</strong>
                 </p>
 
                 <p>
                     ⚽ Average Goals:
-                    <strong>
-                        ${awayForm.averageGoals.toFixed(2)}
-                    </strong>
+                    <strong>${awayForm.averageGoals.toFixed(2)}</strong>
                 </p>
 
                 <p>
                     🛡️ Average Conceded:
-                    <strong>
-                        ${awayForm.averageConceded.toFixed(2)}
-                    </strong>
+                    <strong>${awayForm.averageConceded.toFixed(2)}</strong>
                 </p>
 
                 <p>
                     🧤 Clean Sheet Rate:
-                    <strong>
-                        ${awayForm.cleanSheetRate.toFixed(1)}%
-                    </strong>
+                    <strong>${awayForm.cleanSheetRate.toFixed(1)}%</strong>
                 </p>
 
             </div>
 
-
             <hr>
-
 
             <div class="probability-section">
 
-                <h3>
-                    📊 Win Probabilities
-                </h3>
+                <h3>📊 Win Probabilities</h3>
 
                 <p>
                     🏠 ${homeName}:
-                    <strong>
-                        ${probabilities.homeProbability.toFixed(1)}%
-                    </strong>
+                    <strong>${probabilities.homeProbability.toFixed(1)}%</strong>
                 </p>
 
                 <p>
                     🤝 Draw:
-                    <strong>
-                        ${probabilities.drawProbability.toFixed(1)}%
-                    </strong>
+                    <strong>${probabilities.drawProbability.toFixed(1)}%</strong>
                 </p>
 
                 <p>
                     ✈️ ${awayName}:
-                    <strong>
-                        ${probabilities.awayProbability.toFixed(1)}%
-                    </strong>
+                    <strong>${probabilities.awayProbability.toFixed(1)}%</strong>
                 </p>
 
             </div>
 
-
             <hr>
-
 
             <div class="final-prediction">
 
-                <h2>
-                    🎯 OGWEYOJR FINAL TIP
-                </h2>
+                <h2>🎯 OGWEYOJR FINAL TIP</h2>
 
                 <h3>
                     ${finalPrediction.prediction}
@@ -3443,35 +3379,28 @@ async function runSeriousAnalysis() {
 
             </div>
 
-
             <hr>
-
 
             <p>
                 ⚠️ Predictions are statistical estimates,
                 not guaranteed outcomes.
             </p>
 
-            <p>
-                Bet responsibly.
-            </p>
+            <p>Bet responsibly.</p>
 
         </div>
 
     `;
-
 
     console.log(
         "🎯 FINAL:",
         finalPrediction
     );
 
-
     console.log(
         "✅ SERIOUS PREDICTION COMPLETE"
     );
 }
-
 
 // ============================================================
 // CONNECT ENGINE TO ANALYZE BUTTON
