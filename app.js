@@ -2432,6 +2432,7 @@ async function analyzeMatch() {
 }
 
 
+```javascript
 // ============================================================
 // APPLICATION START
 // ============================================================
@@ -2442,17 +2443,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("OGWEYOJR TIPS STARTING");
     console.log("==============================");
 
-    const country =
-        document.getElementById("country");
-
-    const competition =
-        document.getElementById("competition");
-
-    const season =
-        document.getElementById("season");
-
-    const analyzeButton =
-        document.getElementById("analyze-btn");
+    const country = document.getElementById("country");
+    const competition = document.getElementById("competition");
+    const season = document.getElementById("season");
+    const analyzeButton = document.getElementById("analyze-btn");
 
     if (
         !country ||
@@ -2495,33 +2489,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     );
 
 });
-
-);// ============================================================
-// OGWEYOJR SERIOUS PREDICTION ENGINE
-// ============================================================
-
-async function getTeamStatistics(teamId, leagueId, season) {
-
-    console.log(
-        `📊 Loading statistics for team ${teamId}`
-    );
-
-    const data = await apiRequest(
-        `/teams/statistics?league=${leagueId}&season=${season}&team=${teamId}`
-    );
-
-    if (!data || !data.response) {
-
-        console.warn(
-            `No statistics available for team ${teamId}`
-        );
-
-        return null;
-    }
-
-    return data.response;
-}
-
+```
 
 // ============================================================
 // GET LAST MATCHES
