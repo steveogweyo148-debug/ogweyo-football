@@ -2483,6 +2483,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     await loadCountries();
 
  ```javascript
+```javascript
 // ============================================================
 // APPLICATION START
 // ============================================================
@@ -2493,10 +2494,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("OGWEYOJR TIPS STARTING");
     console.log("==============================");
 
-    const country = document.getElementById("country");
-    const competition = document.getElementById("competition");
-    const season = document.getElementById("season");
-    const analyzeButton = document.getElementById("analyze-btn");
+    const country =
+        document.getElementById("country");
+
+    const competition =
+        document.getElementById("competition");
+
+    const season =
+        document.getElementById("season");
+
+    const analyzeButton =
+        document.getElementById("analyze-btn");
 
     if (
         !country ||
@@ -2504,7 +2512,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         !season ||
         !analyzeButton
     ) {
-        console.error("Required HTML elements are missing.");
+        console.error(
+            "Required HTML elements are missing."
+        );
         return;
     }
 
@@ -2538,18 +2548,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 ```
-
-    if (
-        !data ||
-        !Array.isArray(data.response)
-    ) {
-
-        return [];
-    }
-
-    return data.response;
-}
-
 
 // ============================================================
 // CALCULATE TEAM FORM
